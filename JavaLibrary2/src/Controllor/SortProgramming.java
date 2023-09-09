@@ -20,10 +20,6 @@ public class SortProgramming extends Menu<String> {
         algorithm = new Algorithm();
         size_array = element.getSize_array();
         array = element.getArray();
-        //1. Enter a possitive number
-        //size_array = library.getInt("Enter number of array", 1, 100);
-        //2. Create array by generate random integer in range
-        //array = library.createArray(size_array);
     }
 
     public void execute(int n) {
