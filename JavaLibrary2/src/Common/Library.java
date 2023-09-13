@@ -9,6 +9,7 @@ public class Library {
         int a = -1;
         Scanner sc = new Scanner(System.in);
         while (true) {
+            sc = new Scanner(System.in);
             System.out.print(promt + ": ");
             try {
                 String s = sc.nextLine();

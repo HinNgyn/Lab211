@@ -4,10 +4,11 @@ import Common.Algorithm;
 import Common.Library;
 import Model.Element;
 import View.Menu;
+import java.util.Scanner;
 
 public class SortProgramming extends Menu<String> {
 
-    static String[] mc = {"Sort", "Search", "Exit"};
+    static String[] mc = {/*"Sort",*/ "Search", "Exit"};
 
     protected Library library;
     protected Algorithm algorithm;
@@ -25,13 +26,11 @@ public class SortProgramming extends Menu<String> {
     public void execute(int n) {
         switch (n) {
             case 1:
-                sort();
-                break;
-            case 2:
                 search();
                 break;
-            case 3:
+            case 2:
                 System.exit(0);
+                break;
         }
     }
 
@@ -81,10 +80,13 @@ public class SortProgramming extends Menu<String> {
             @Override
             public synchronized void execute(int n) {
                 algorithm.buddleSort(array);
+                
                 library.display(array);
+                
                 int value = library.getInt("\nEnter number to find: ", 1, 100);
                 switch (n) {
                     case 1:
+                        System.out.println("Found value: " + value + " at index: " + algorithm.linearSearch(array, value));
                         break;
                     case 2:
                         System.out.println("Found value: " + value + " at index: " + algorithm.binarySearch(array, value));

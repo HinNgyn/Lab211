@@ -12,7 +12,6 @@ public abstract class Menu<T> {
     public Menu() {
         mChon = new ArrayList<>();
     }
-
     public Menu(String td, String[] mc) {
         title = td;
         mChon = new ArrayList<>();
@@ -32,12 +31,11 @@ public abstract class Menu<T> {
 //-------------------------------------------
     public int getSelected() {
         display();
-        return l.getInt("Enter your choice", 1, mChon.size() + 1);
+        return l.getInt("Enter your choice", 1, mChon.size());
     }
 //-------------------------------------------
     public abstract void execute(int n);
 //-------------------------------------------
-
     public void run() {
         while (true) {
             int n = getSelected();

@@ -13,15 +13,6 @@ public class Algorithm {
         }
     }
 
-    public int linearSearch(int[] array, int target){
-        for (int i = 0; i < array.length; i++) {
-            if(target == array[i]){
-                return i;
-            }
-        }
-        return -1;
-    }
-    
     public int partition(int[] array, int left, int right) {
         int i = left, j = right;
         int pivot = array[(left + right) / 2];
@@ -74,4 +65,14 @@ public class Algorithm {
         }
         return -1; // target not found
     }
+    
+        public int linearSearch(int[] array, int target){
+        for (int i = 0; i < array.length; i++) {
+            if(target == array[i]){
+                return i;
+            }
+        }
+        return -1;
+    }
+    
 }
