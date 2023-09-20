@@ -4,23 +4,18 @@ import java.util.Map;
 import java.util.Scanner;
 import java.util.StringTokenizer;
 public class LetterAndCharacter {
-     Map<Character, Integer> charCounter = new HashMap<Character, Integer>();
-     Map<String, Integer> wordCounter = new HashMap<String, Integer>();
+    private Map<Character, Integer> charCounter = new HashMap<Character, Integer>();
+    private Map<String, Integer> wordCounter = new HashMap<String, Integer>();
+    private static final Scanner scanner = new Scanner(System.in);
+
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter your content: ");
-        String content = scanner.nextLine();
         LetterAndCharacter counter = new LetterAndCharacter();
-        counter.analyze(content);
+        counter.analyze();
         counter.display();
     }
-    public void display() {
-        System.out.println(wordCounter);
-        System.out.println(charCounter);
-    }
-    
-    
-    public void analyze(String content) {
+    public void analyze() {
+        System.out.println("Enter your content: ");
+        String content = scanner.nextLine();
         for (char ch : content.toCharArray()) {
             if (Character.isSpaceChar(ch)) continue;
             if (!charCounter.containsKey(ch)) {
@@ -29,14 +24,18 @@ public class LetterAndCharacter {
                 charCounter.put(ch, ((int) charCounter.get(ch)) + 1);
             }
         }
-//        StringTokenizer tokenizer = new StringTokenizer(content);
-//        while (tokenizer.hasMoreTokens()) {
-//            String token = tokenizer.nextToken();
-//            if (!wordCounter.containsKey(token)) {
-//                wordCounter.put(token, 1);
-//            } else {
-//                wordCounter.put(token, ((int) wordCounter.get(token)) + 1);
-//            }
-//        }
+        StringTokenizer tokenizer = new StringTokenizer(content);
+        while (tokenizer.hasMoreTokens()) {
+            String token = tokenizer.nextToken();
+            if (!wordCounter.containsKey(token)) {
+                wordCounter.put(token, 1);
+            } else {
+                wordCounter.put(token, ((int) wordCounter.get(token)) + 1);
+            }
+        }
+    }
+        public void display() {
+        System.out.println(wordCounter);
+        System.out.println(charCounter);
     }
 }
