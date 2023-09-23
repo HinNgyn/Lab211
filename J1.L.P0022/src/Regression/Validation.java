@@ -28,7 +28,6 @@ public class Validation {
                 int result = Integer.parseInt(in.nextLine().trim());
                 if (result < min || result > max) {
                     throw new NumberFormatException();
-
                 }
                 return result;
             } catch (NumberFormatException e) {
