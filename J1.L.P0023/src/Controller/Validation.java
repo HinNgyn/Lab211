@@ -1,7 +1,7 @@
-package Manager;
+package Controller;
 
-import Entity.Fruit;
-import Entity.Order;
+import Model.Fruit;
+import Model.Order;
 import java.util.ArrayList;
 import java.util.Scanner;
 

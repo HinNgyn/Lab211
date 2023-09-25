@@ -1,12 +1,33 @@
-package Manager;
+package Controller;
 
-import Entity.Fruit;
-import Entity.Order;
+import Model.Fruit;
+import Model.Order;
 import java.util.ArrayList;
 import java.util.Hashtable;
 
 public class Manager {
-
+    //
+    static void realMenu(){
+                ArrayList<Fruit> lf = new ArrayList<>();
+        Hashtable<String, ArrayList<Order>> ht = new Hashtable<>();
+//loop until user want to exit
+        while (true) {
+            int choice = Manager.menu();
+            switch (choice) {
+                case 1:
+                    Manager.createFruit(lf);
+                    break;
+                case 2:
+                    Manager.viewOrder(ht);
+                    break;
+                case 3:
+                    Manager.shopping(lf, ht);
+                    break;
+                case 4:
+                    return;
+            }
+        }
+    }
     //display menu
     static int menu() {
         //loop until user want to exit
