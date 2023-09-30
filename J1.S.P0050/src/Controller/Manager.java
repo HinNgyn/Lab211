@@ -23,7 +23,6 @@ public class Manager {
                 int result = Integer.parseInt(in.nextLine().trim());
                 if (result < min || result > max) {
                     throw new NumberFormatException();
-
                 }
                 return result;
             } catch (NumberFormatException e) {
@@ -44,7 +43,6 @@ public class Manager {
                 System.err.println("Must be input double");
                 System.out.print("Enter again: ");
             }
-
         }
     }
 
