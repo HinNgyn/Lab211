@@ -14,11 +14,10 @@ public class Validation {
                 int result = Integer.parseInt(in.nextLine().trim());
                 if (result < min || result > max) {
                     throw new NumberFormatException();
-
                 }
                 return result;
             } catch (NumberFormatException e) {
-                System.err.println("Please input number in rage [" + min + ", " + max + "]");
+                System.err.println("Please input number in range [" + min + ", " + max + "]");
                 System.out.print("Enter again: ");
             }
         }
