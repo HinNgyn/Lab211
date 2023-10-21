@@ -3,7 +3,7 @@ import Controller.Controller;
 import Model.DataModel;
 import View.View;
 
-public class MainNe {
+public class Main {
 
     public static void main(String[] args) {
         DataModel model = new DataModel("");
